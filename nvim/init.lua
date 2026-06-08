@@ -502,7 +502,7 @@ end
 
 local function parse_apks(text)
     local apks = {}
-    for apk in text:gmatch("[%w%._%-\+/:]+%.apk") do
+    for apk in text:gmatch("[%w%._%+%/:%-]*%.apk") do
         if file_exists(apk) then
             table.insert(apks, apk)
         end
