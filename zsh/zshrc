@@ -1,0 +1,60 @@
+# ~/.zshrc - Managed by dotfiles
+# Do not edit directly; changes may be overwritten on next bootstrap.
+
+# ---- Homebrew ----
+export PATH="/opt/homebrew/bin:$PATH"
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
+# ---- Extra PATHs (conditional) ----
+# User-local binaries
+export PATH="$HOME/.local/bin:$PATH"
+
+# Kotlin toolchain
+if [[ -d "$HOME/.local/share/kotlin/bin" ]]; then
+  export PATH="$HOME/.local/share/kotlin/bin:$PATH"
+fi
+
+# Android SDK
+if [[ -d "$HOME/Library/Android/sdk" ]]; then
+  export ANDROID_HOME="$HOME/Library/Android/sdk"
+  export ANDROID_SDK_ROOT="$ANDROID_HOME"
+  export PATH="$ANDROID_HOME/platform-tools:$ANDROID_HOME/cmdline-tools/latest/bin:$PATH"
+fi
+
+# ---- Editor ----
+export EDITOR="nvim"
+export VISUAL="nvim"
+
+# ---- Aliases ----
+alias vim="nvim"
+alias vi="nvim"
+alias ls="ls -G"
+alias ll="ls -lahG"
+
+# ---- Tool init ----
+eval "$(starship init zsh)"
+eval "$(zoxide init zsh)"
+
+# FZF key bindings
+if [[ -f "$(brew --prefix)/opt/fzf/shell/key-bindings.zsh" ]]; then
+  source "$(brew --prefix)/opt/fzf/shell/key-bindings.zsh"
+fi
+if [[ -f "$(brew --prefix)/opt/fzf/shell/completion.zsh" ]]; then
+  source "$(brew --prefix)/opt/fzf/shell/completion.zsh"
+fi
+
+# ---- History ----
+HISTFILE="$HOME/.zsh_history"
+HISTSIZE=10000
+SAVEHIST=10000
+setopt SHARE_HISTORY
+setopt HIST_IGNORE_DUPS
+setopt HIST_IGNORE_SPACE
+
+# ---- Completion ----
+autoload -Uz compinit
+compinit -u
+
+# ---- Misc ----
+export CLICOLOR=1
+export LSCOLORS=ExFxBxDxCxegedabagacad
