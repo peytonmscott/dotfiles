@@ -33,7 +33,7 @@ alias ll="ls -lahG"
 
 # ---- Tool init ----
 eval "$(starship init zsh)"
-eval "$(zoxide init zsh)"
+eval "$(zoxide init zsh --cmd cd)"
 
 # FZF key bindings
 if [[ -f "$(brew --prefix)/opt/fzf/shell/key-bindings.zsh" ]]; then
