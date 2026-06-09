@@ -259,73 +259,73 @@ if sidekick_ok then
     })
 end
 
--- Kotlin (disabled: kotlin-lsp build expired, waiting for JetBrains update)
--- local kotlin_ok, kotlin = pcall(require, "kotlin")
--- if kotlin_ok then
---     local brew_kotlin_lsp = "/opt/homebrew/opt/kotlin-lsp/libexec"
---     if not os.getenv("KOTLIN_LSP_DIR") and vim.fn.isdirectory(brew_kotlin_lsp) == 1 then
---         vim.env.KOTLIN_LSP_DIR = brew_kotlin_lsp
---     end
---
---     kotlin.setup({
---         root_markers = {
---             "gradlew",
---             "settings.gradle",
---             "settings.gradle.kts",
---             "build.gradle",
---             "build.gradle.kts",
---             "pom.xml",
---             ".git",
---         },
---         inlay_hints = {
---             enabled = true,
---         },
---         folding = {
---             enabled = true,
---         },
---         build_tool = "gradle",
---     })
---
---     vim.keymap.set("n", "<leader>ko", ":KotlinOrganizeImports<cr>", {
---         silent = true,
---         desc = "Kotlin organize imports",
---     })
---
---     vim.keymap.set("n", "<leader>kf", ":KotlinFormat<cr>", {
---         silent = true,
---         desc = "Kotlin format",
---     })
---
---     vim.keymap.set("n", "<leader>kh", ":KotlinInlayHintsToggle<cr>", {
---         silent = true,
---         desc = "Kotlin toggle inlay hints",
---     })
---
---     vim.keymap.set("n", "<leader>ks", ":KotlinSymbols<cr>", {
---         silent = true,
---         desc = "Kotlin document symbols",
---     })
---
---     vim.keymap.set("n", "<leader>kw", ":KotlinWorkspaceSymbols<cr>", {
---         silent = true,
---         desc = "Kotlin workspace symbols",
---     })
---
---     vim.keymap.set("n", "<leader>ka", ":KotlinCodeActions<cr>", {
---         silent = true,
---         desc = "Kotlin code actions",
---     })
---
---     vim.keymap.set("n", "<leader>kq", ":KotlinQuickFix<cr>", {
---         silent = true,
---         desc = "Kotlin quick fix",
---     })
---
---     vim.keymap.set("n", "<leader>kd", ":KotlinDebug<cr>", {
---         silent = true,
---         desc = "Kotlin debug attach",
---     })
--- end
+-- Kotlin
+local kotlin_ok, kotlin = pcall(require, "kotlin")
+if kotlin_ok then
+    local brew_kotlin_lsp = "/opt/homebrew/opt/kotlin-lsp/libexec"
+    if not os.getenv("KOTLIN_LSP_DIR") and vim.fn.isdirectory(brew_kotlin_lsp) == 1 then
+        vim.env.KOTLIN_LSP_DIR = brew_kotlin_lsp
+    end
+
+    kotlin.setup({
+        root_markers = {
+            "gradlew",
+            "settings.gradle",
+            "settings.gradle.kts",
+            "build.gradle",
+            "build.gradle.kts",
+            "pom.xml",
+            ".git",
+        },
+        inlay_hints = {
+            enabled = true,
+        },
+        folding = {
+            enabled = true,
+        },
+        build_tool = "gradle",
+    })
+
+    vim.keymap.set("n", "<leader>ko", ":KotlinOrganizeImports<cr>", {
+        silent = true,
+        desc = "Kotlin organize imports",
+    })
+
+    vim.keymap.set("n", "<leader>kf", ":KotlinFormat<cr>", {
+        silent = true,
+        desc = "Kotlin format",
+    })
+
+    vim.keymap.set("n", "<leader>kh", ":KotlinInlayHintsToggle<cr>", {
+        silent = true,
+        desc = "Kotlin toggle inlay hints",
+    })
+
+    vim.keymap.set("n", "<leader>ks", ":KotlinSymbols<cr>", {
+        silent = true,
+        desc = "Kotlin document symbols",
+    })
+
+    vim.keymap.set("n", "<leader>kw", ":KotlinWorkspaceSymbols<cr>", {
+        silent = true,
+        desc = "Kotlin workspace symbols",
+    })
+
+    vim.keymap.set("n", "<leader>ka", ":KotlinCodeActions<cr>", {
+        silent = true,
+        desc = "Kotlin code actions",
+    })
+
+    vim.keymap.set("n", "<leader>kq", ":KotlinQuickFix<cr>", {
+        silent = true,
+        desc = "Kotlin quick fix",
+    })
+
+    vim.keymap.set("n", "<leader>kd", ":KotlinDebug<cr>", {
+        silent = true,
+        desc = "Kotlin debug attach",
+    })
+end
 
 -- Trouble
 local trouble_ok, trouble = pcall(require, "trouble")
@@ -833,7 +833,7 @@ if which_key_ok then
         { "<leader>9", group = "99" },
         { "<leader>a", group = "agent" },
         { "<leader>d", group = "debug" },
-        -- { "<leader>k", group = "kotlin" },
+        { "<leader>k", group = "kotlin" },
         { "<leader>s", group = "search" },
     })
 end
