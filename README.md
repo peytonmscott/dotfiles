@@ -22,9 +22,9 @@ My personal macOS dotfiles. Managed as a bare Git repo and symlinked by [macbook
 git clone https://github.com/peytonmscott/macbook-setup.git ~/Developer/macbook-setup
 cd ~/Developer/macbook-setup
 ./bootstrap.sh --role personal \
-  --git-name "Peyton" \
-  --git-email "peyton.scott078@gmail.com" \
-  --dotfiles-repo "https://github.com/peytonmscott/dotfiles.git"
+  --git-name "Your Name" \
+  --git-email "your.email@example.com" \
+  --dotfiles-repo "https://github.com/yourusername/dotfiles.git"
 ```
 
 ### Manual
