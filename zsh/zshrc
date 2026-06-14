@@ -28,8 +28,17 @@ export VISUAL="nvim"
 # ---- Aliases ----
 alias vim="nvim"
 alias vi="nvim"
-alias ls="ls -G"
-alias ll="ls -lahG"
+
+# Use eza if available, fallback to ls
+if command -v eza >/dev/null 2>&1; then
+  alias ls="eza --group-directories-first"
+  alias ll="eza -la --group-directories-first"
+  alias lt="eza -la --tree --group-directories-first"
+  alias l="eza -lah --group-directories-first"
+else
+  alias ls="ls -G"
+  alias ll="ls -lahG"
+fi
 
 # ---- Tool init ----
 eval "$(starship init zsh)"
