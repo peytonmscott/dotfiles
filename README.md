@@ -10,6 +10,7 @@ My personal macOS dotfiles. Managed as a bare Git repo and symlinked by [macbook
 | `git/gitignore_global` | `~/.gitignore_global` | Global Git ignore patterns |
 | `ghostty/config` | `~/.config/ghostty` | Ghostty terminal |
 | `aerospace/aerospace.toml` | `~/.config/aerospace/aerospace.toml` | AeroSpace tiling WM |
+| `omniwm/settings.toml` | `~/.config/omniwm` | OmniWM tiling WM |
 | `nvim/init.lua` | `~/.config/nvim` | Neovim config |
 | `starship/starship.toml` | `~/.config/starship.toml` | Starship prompt |
 | `yazi/yazi.toml` | `~/.config/yazi` | Yazi file manager |
@@ -35,6 +36,7 @@ ln -sf ~/Developer/dotfiles/zsh/zshrc ~/.zshrc
 ln -sf ~/Developer/dotfiles/git/gitignore_global ~/.gitignore_global
 ln -sf ~/Developer/dotfiles/ghostty ~/.config/ghostty
 ln -sf ~/Developer/dotfiles/aerospace/aerospace.toml ~/.config/aerospace/aerospace.toml
+ln -sf ~/Developer/dotfiles/omniwm ~/.config/omniwm
 ln -sf ~/Developer/dotfiles/nvim ~/.config/nvim
 ln -sf ~/Developer/dotfiles/starship/starship.toml ~/.config/starship.toml
 ln -sf ~/Developer/dotfiles/yazi ~/.config/yazi
@@ -55,6 +57,16 @@ Tiling window manager config with:
 - 10 workspaces
 - Auto-layout rules for apps like Teams, Outlook, Finder
 - Service mode for reload/flatten/close-all
+
+### OmniWM
+
+Alternative tiling window manager (Niri/Hyprland-inspired) with:
+- Two layout modes: Niri (scrolling columns) and Dwindle (BSP)
+- Vim key navigation (Option + h/j/k/l)
+- 10 workspaces with app auto-assignment
+- Quake terminal, command palette, overview mode
+- App rules for floating (Finder, Calculator, etc.)
+- Workspace bar and hidden status bar icons
 
 ### Zsh
 

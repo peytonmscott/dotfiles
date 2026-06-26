@@ -1,0 +1,220 @@
+# OmniWM Configuration
+# Inspired by AeroSpace setup — vim keys, app rules, floating defaults
+
+[general]
+# Start OmniWM at login
+startAtLogin = true
+
+# Default layout for new workspaces
+defaultLayout = "niri"
+
+# Gap settings (similar to AeroSpace gaps)
+windowGap = 6
+outerGap = 6
+
+# Updates
+updateChecksEnabled = true
+
+[hotkeys]
+# Use Option as the main modifier (like AeroSpace uses Alt)
+# Focus navigation with vim keys
+focusLeft = "option + h"
+focusDown = "option + j"
+focusUp = "option + k"
+focusRight = "option + l"
+
+# Move windows
+moveLeft = "option + shift + h"
+moveDown = "option + shift + j"
+moveUp = "option + shift + k"
+moveRight = "option + shift + l"
+
+# Workspace switching (1-9)
+switchWorkspace1 = "option + 1"
+switchWorkspace2 = "option + 2"
+switchWorkspace3 = "option + 3"
+switchWorkspace4 = "option + 4"
+switchWorkspace5 = "option + 5"
+switchWorkspace6 = "option + 6"
+switchWorkspace7 = "option + 7"
+switchWorkspace8 = "option + 8"
+switchWorkspace9 = "option + 9"
+
+# Move window to workspace
+moveToWorkspace1 = "option + shift + 1"
+moveToWorkspace2 = "option + shift + 2"
+moveToWorkspace3 = "option + shift + 3"
+moveToWorkspace4 = "option + shift + 4"
+moveToWorkspace5 = "option + shift + 5"
+moveToWorkspace6 = "option + shift + 6"
+moveToWorkspace7 = "option + shift + 7"
+moveToWorkspace8 = "option + shift + 8"
+moveToWorkspace9 = "option + shift + 9"
+
+# Workspace back and forth (like AeroSpace alt-tab)
+switchWorkspaceBackAndForth = "option + tab"
+
+# Toggle fullscreen
+toggleFullscreen = "option + shift + f"
+
+# Toggle floating for focused window
+toggleFocusedWindowFloating = "option + shift + t"
+
+# Balance sizes
+balanceSizes = "option + shift + b"
+
+# Toggle workspace layout (Niri <-> Dwindle)
+toggleWorkspaceLayout = "option + shift + l"
+
+# Toggle overview
+toggleOverview = "option + shift + o"
+
+# Toggle command palette
+openCommandPalette = "control + option + space"
+
+# Toggle quake terminal
+toggleQuakeTerminal = "option + `"
+
+# Toggle workspace bar
+toggleWorkspaceBar = "unassigned"
+
+# Monitor focus
+focusNextMonitor = "control + command + tab"
+focusPreviousMonitor = "unassigned"
+focusLastMonitor = "control + command + `"
+
+# Column operations (Niri)
+moveColumnLeft = "control + option + shift + left"
+moveColumnRight = "control + option + shift + right"
+toggleColumnTabbed = "option + t"
+toggleColumnFullWidth = "option + shift + f"
+cycleColumnWidthForward = "option + ."
+cycleColumnWidthBackward = "option + ,"
+
+# Scratchpad
+assignScratchpad = "unassigned"
+toggleScratchpad = "unassigned"
+
+[workspaces]
+# Named workspaces (similar to AeroSpace workspaces 1-10)
+# Workspace 10 assigned to secondary monitor
+[[workspaces.items]]
+name = "1"
+displayName = "1"
+
+[[workspaces.items]]
+name = "2"
+displayName = "2"
+
+[[workspaces.items]]
+name = "3"
+displayName = "3"
+
+[[workspaces.items]]
+name = "4"
+displayName = "4"
+
+[[workspaces.items]]
+name = "5"
+displayName = "5"
+
+[[workspaces.items]]
+name = "6"
+displayName = "6"
+
+[[workspaces.items]]
+name = "7"
+displayName = "7"
+
+[[workspaces.items]]
+name = "8"
+displayName = "8"
+
+[[workspaces.items]]
+name = "9"
+displayName = "9"
+
+[[workspaces.items]]
+name = "10"
+displayName = "10"
+
+[appRules]
+# Floating apps (matching AeroSpace config)
+[[appRules.rules]]
+appNameSubstring = "teams"
+assignToWorkspace = "4"
+
+[[appRules.rules]]
+appNameSubstring = "outlook"
+assignToWorkspace = "5"
+
+[[appRules.rules]]
+appNameSubstring = "Windows App"
+layout = "float"
+
+[[appRules.rules]]
+appNameSubstring = "finder"
+layout = "float"
+
+[[appRules.rules]]
+appNameSubstring = "quicktime"
+layout = "float"
+
+[[appRules.rules]]
+bundleId = "com.apple.QuickTimePlayerX"
+layout = "float"
+
+[[appRules.rules]]
+bundleId = "com.apple.calculator"
+layout = "float"
+
+[[appRules.rules]]
+bundleId = "com.apple.systempreferences"
+layout = "float"
+
+[[appRules.rules]]
+appNameSubstring = "self service"
+layout = "float"
+
+[[appRules.rules]]
+bundleId = "com.mitchellh.ghostty"
+layout = "tile"
+
+[quakeTerminal]
+enabled = true
+position = "top"
+height = 400
+opacity = 0.95
+
+[workspaceBar]
+enabled = true
+position = "bottom"
+height = 28
+
+[hiddenBar]
+enabled = true
+
+[overview]
+enabled = true
+
+[mouse]
+# Option + drag to swap windows
+swapWindowsModifier = "option"
+# Option + Shift + drag to insert into column
+insertIntoColumnModifier = "option + shift"
+# Option + right-drag to resize
+resizeModifier = "option"
+resizeButton = "right"
+
+[gestures]
+# Horizontal scroll through columns
+horizontalScrollEnabled = true
+horizontalScrollModifier = "option + shift"
+
+[niri]
+# Niri-specific settings
+columnWidthPresets = [0.33, 0.5, 0.67]
+
+[dwindle]
+# Dwindle-specific settings
+splitRatio = 0.5
